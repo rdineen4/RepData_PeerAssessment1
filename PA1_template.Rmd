@@ -1,6 +1,6 @@
 ---
-output: 
-  html_document: 
+output:
+  html_document:
     keep_md: yes
 ---
 Reproducible Research Peer Assignment 1
@@ -166,7 +166,7 @@ To look for differences in activity from weekdays to weekends, we start by creat
 a variable to indicate whether each date is a weekday or weekend. We can then group
 our data by that variable and find the average steps taken at each interval.
 
-```{r weekdayweekend}
+```{r weekdayweekend,message=FALSE}
 weekdayData <- filledData %>% mutate(weekday = weekdays(date)) %>%
     mutate(dayOrEnd = factor(ifelse(weekday %in% c("Saturday", "Sunday"), "weekend", "weekday"))) %>%
     select(-weekday)

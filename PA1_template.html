@@ -500,7 +500,6 @@ ggarrange(hist1 + ggtitle(&quot;Before Imputing&quot;), hist2, nrow = 2, ncol = 
 
 grpIntervalMeans &lt;- weekdayData %&gt;% group_by(dayOrEnd, interval) %&gt;%
     summarize(meanSteps = mean(steps)) %&gt;% ungroup() %&gt;% mutate(index = rep(1:288, 2))</code></pre>
-<pre><code>## `summarise()` regrouping output by &#39;dayOrEnd&#39; (override with `.groups` argument)</code></pre>
 <p>We can now plot the results on separate line graphs to view the different trends.</p>
 <pre class="r"><code>ggplot(data = grpIntervalMeans, aes(index, meanSteps)) +
     geom_line() +

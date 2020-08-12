@@ -1,6 +1,6 @@
 ---
-output: 
-  html_document: 
+output:
+  html_document:
     keep_md: yes
 ---
 Reproducible Research Peer Assignment 1
@@ -237,10 +237,6 @@ weekdayData <- filledData %>% mutate(weekday = weekdays(date)) %>%
 
 grpIntervalMeans <- weekdayData %>% group_by(dayOrEnd, interval) %>%
     summarize(meanSteps = mean(steps)) %>% ungroup() %>% mutate(index = rep(1:288, 2))
-```
-
-```
-## `summarise()` regrouping output by 'dayOrEnd' (override with `.groups` argument)
 ```
 
 We can now plot the results on separate line graphs to view the different trends.
